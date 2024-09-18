@@ -6,26 +6,16 @@ from train import *
 
 
 def main(model_file: str, testing_file: str) -> None:
-    # make results directory
     if not os.path.exists("./results"):
         os.mkdir("./results")
 
-    # get language
     language = model_file.split(".")[-1]
 
-    # get model dictionary
     model_probs = read_model(model_file)
-
-    # get testing file lines
     testing_file_lines = get_file_lines(testing_file)
-
-    # get testing trigram list
     _, _, testing_trigrams = get_trigram_data(testing_file_lines)
-
-    # get perplexity
     testing_perplexity = calculate_perplexity(model_probs, testing_trigrams)
 
-    # save testing perplexity
     save_testing_perplexity(testing_perplexity, language)
 
 
