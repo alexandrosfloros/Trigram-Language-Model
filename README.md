@@ -32,4 +32,4 @@ python generate.py --model <model_file.lang> --chars <character_count>
 
 ## Language Identification
 
-Training and testing sets can be found in the data folder. These consist of sentences from the European Parliament Corpus in English (en), German (de) and Spanish (es). Once a trigram language model is trained, it can be tested using a separate document to evaluate its perplexity. If the same testing document is used on a set of models trained on different languages, the model matching the document's language should give the lowest perplexity, hence providing a method of performing language identification.
+Once a trigram language model has been trained, its preplexity can be evaluated using a test document. If this text is applied on a set of models trained on different languages, the model matching the document's language should give the lowest perplexity, hence providing a method of performing language identification.

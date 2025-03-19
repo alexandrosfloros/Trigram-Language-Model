@@ -241,8 +241,7 @@ def save_perplexity_plot(
 
 
 def main(training_file: str, testing_file: str | None):
-    if not os.path.exists("./results"):
-        os.mkdir("./results")
+    os.mkdirs("./results", exist_ok=True)
 
     testing_file_provided = isinstance(testing_file, str)
     language = training_file.split(".")[-1]

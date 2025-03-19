@@ -84,8 +84,7 @@ def save_seqs(generated_seqs: list[str]) -> None:
 
 
 def main(model_file: str, char_count: int) -> None:
-    if not os.path.exists("./results"):
-        os.mkdir("./results")
+    os.mkdirs("./results", exist_ok=True)
 
     model_probs = read_model(model_file)
     generated_seqs = generate_seqs(model_probs, char_count)

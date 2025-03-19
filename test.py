@@ -6,8 +6,7 @@ from train import *
 
 
 def main(model_file: str, testing_file: str) -> None:
-    if not os.path.exists("./results"):
-        os.mkdir("./results")
+    os.mkdirs("./results", exist_ok=True)
 
     language = model_file.split(".")[-1]
 
